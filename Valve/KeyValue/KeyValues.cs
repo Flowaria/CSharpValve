@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Valve.KeyValue
 {
-    public class KeyValues
+    public partial class KeyValues
     {
         private List<string> basefile;
         public KVNode Root { get; }

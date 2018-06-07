@@ -11,7 +11,7 @@ namespace Valve.TextureFormat
     {
         public VMT()
         {
-            KeyValues kv = KVFile.ImportKeyValue("filename", false);
+            KeyValues kv = KeyValuesFile.ImportKeyValue("filename", false);
             var basetexture = (string)kv.Root.GetValue("$baseTexture");
         }
     }

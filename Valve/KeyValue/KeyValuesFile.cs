@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Valve.KeyValue
 {
-    public static class KVFile
+    public partial class KeyValues
     {
         private static Regex regRemark;
         private static Regex regKv;
         private static Regex regQuote;
 
-        static KVFile()
+        static KeyValues()
         {
             regRemark = new Regex("((\\/\\/+).+)|((\\/\\*+)(.|\\n|\\r)*(\\*\\/))"); //주석 제거
             regKv = new Regex("(\\\"([^\\\"]*?)\\\")|(\\'[^\\']*?\\')|[{}]|([^\\s][^\\s]*)"); //KeyValue 형식으로 나눔

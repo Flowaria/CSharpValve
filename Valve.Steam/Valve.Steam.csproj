@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{66A8409E-243D-462B-A6D0-DE782B6FABA7}</ProjectGuid>
+    <ProjectGuid>{309FF3D3-BC1C-47C2-A976-FD089A25AEE6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Valve</RootNamespace>
-    <AssemblyName>valve</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>Valve.Steam</RootNamespace>
+    <AssemblyName>Valve.Steam</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -40,24 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Econ\ItemSchema.cs" />
-    <Compile Include="KeyValue\KeyValues.cs" />
-    <Compile Include="KeyValue\KVNode.cs" />
-    <Compile Include="KeyValue\KeyValuesFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RemoteConsole\RCON.cs" />
-    <Compile Include="VTF\VMT.cs" />
-    <Compile Include="VTF\VTF.cs" />
+    <Compile Include="SteamCMD\SteamCMD.cs" />
+    <Compile Include="Steam\SteamInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="WebAPI\" />
+    <ProjectReference Include="..\Valve\Valve.csproj">
+      <Project>{66A8409E-243D-462B-A6D0-DE782B6FABA7}</Project>
+      <Name>Valve</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

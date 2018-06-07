@@ -4,6 +4,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Xml;
 using TF2.Info;
+using Valve.Econ;
 
 namespace TF2.Items
 {
@@ -14,7 +15,7 @@ namespace TF2.Items
         FAIL_ACCESS,
         SUCCESS
     }
-    public static class ItemsInfo
+    public class ItemsInfo : ItemSchema
     {
         private const string VERIFY_APIKEY_URL = "https://api.steampowered.com/IEconItems_440/GetSchemaURL/v1/?key={0}&format=xml";
         private const string SCHEMA_ITEMS_URL = "https://api.steampowered.com/IEconItems_440/GetSchemaItems/v1/?key={0}&language={1}&format=xml";
@@ -23,10 +24,6 @@ namespace TF2.Items
         private static List<TFAttribute> attributes = new List<TFAttribute>();
         private static string schema_items_dir;
         private static string schema_attributes_dir;
-
-        private static string apikey = null;
-        private static string language = "en";
-        private static string version;
 
         public static string Apikey { get { return apikey; } }
         public static string Language { get { return language; } }

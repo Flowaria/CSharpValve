@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TF2.Info
+namespace Valve.TF2.Info
 {
     //TF
     public enum TFClass
@@ -24,22 +24,23 @@ namespace TF2.Info
     [Flags]
     public enum TFBotAttribute //BOT ATTRIBUTE
     {
-        None,
-        SpawnWithFullCharge,
-        AlwaysCrit,
-        AlwaysFireWeapon,
-        MiniBoss,
-        UseBossHealthBar,
-        HoldFireUntilFullReload,
-        IgnoreFlag,
-        TeleportToHint,
-        AutoJump,
-        AirChargeOnly,
-        Parachute,
-        VaccinatorBullets,
-        VaccinatorBlast,
-        VaccinatorFire,
-        ProjectileShield
+        None = 0,
+        SpawnWithFullCharge = 1 << 0,
+        AlwaysCrit = 1 << 1,
+        AlwaysFireWeapon = 1 << 2,
+        MiniBoss = 1 << 3,
+        UseBossHealthBar = 1 << 4,
+        HoldFireUntilFullReload = 1 << 5,
+        IgnoreFlag = 1 << 6,
+        TeleportToHint = 1 << 7,
+        AutoJump = 1 << 8,
+        AirChargeOnly = 1 << 9,
+        Parachute = 1 << 10,
+        VaccinatorBullets = 1 << 11,
+        VaccinatorBlast = 1 << 12,
+        VaccinatorFire = 1 << 13,
+        ProjectileShield = 1 << 14,
+        All = int.MaxValue
     }
 
     public enum TFBotSkill //BOT SKILL LEVEL

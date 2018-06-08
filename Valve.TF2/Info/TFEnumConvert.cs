@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TF2.Info
+namespace Valve.TF2.Info
 {
     public class TFEnumConvert
     {

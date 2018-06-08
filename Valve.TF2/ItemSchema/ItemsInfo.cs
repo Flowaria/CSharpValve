@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Xml;
-using TF2.Info;
 using Valve.Econ;
 
-namespace TF2.Items
+namespace Valve.TF2.Items
 {
     public enum FetchSchemaResult
     {

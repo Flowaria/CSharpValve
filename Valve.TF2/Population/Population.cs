@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TF2.Population.Element;
 using Valve.KeyValue;
 
 namespace TF2.Population
@@ -22,6 +23,9 @@ namespace TF2.Population
         public Population(int wave_length)
         {
             WaveLength = wave_length;
+            WaveSpawn ws = new WaveSpawn();
+            Squad sd = ws.Spawner as Squad;
+            
         }
 
         public static Population FromKeyValue(KeyValues kv)

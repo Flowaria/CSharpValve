@@ -45,8 +45,11 @@
     <Compile Include="ItemSchema\TFItem.cs" />
     <Compile Include="Population\Attributes.cs" />
     <Compile Include="Population\Elements\Mission.cs" />
-    <Compile Include="Population\Elements\Tank.cs" />
-    <Compile Include="Population\Elements\TFBot.cs" />
+    <Compile Include="Population\Elements\Spawnable\RandomChoice.cs" />
+    <Compile Include="Population\Elements\Spawnable\Spawnable.cs" />
+    <Compile Include="Population\Elements\Spawnable\Squad.cs" />
+    <Compile Include="Population\Elements\Spawnable\Tank.cs" />
+    <Compile Include="Population\Elements\Spawnable\TFBot.cs" />
     <Compile Include="Population\Elements\Wave.cs" />
     <Compile Include="Population\Elements\WaveSpawn.cs" />
     <Compile Include="Population\Population.cs" />

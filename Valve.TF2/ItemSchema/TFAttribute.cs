@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TF2.Info;
+using Valve.TF2.Info;
 
-namespace TF2.Items
+namespace Valve.TF2.Items
 {
     public class TFAttribute
     {

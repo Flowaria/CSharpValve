@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace TF2.Population.Element
 {
-    public class WaveSpawn
+    public class Spawnable
     {
-        public Spawnable Spawner { get; private set; }
+        
     }
 }

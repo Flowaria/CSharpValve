@@ -8,6 +8,6 @@ namespace TF2.Population.Element
 {
     public class Wave
     {
-
+        public List<WaveSpawn> WaveSpawns { get; private set; }
     }
 }

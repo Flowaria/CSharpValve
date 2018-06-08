@@ -13,9 +13,11 @@ namespace Valve.KeyValue
         private static Regex regRemark;
         private static Regex regKv;
         private static Regex regQuote;
+        private static Regex regSpecialChar;
 
         static KeyValues()
         {
+            regSpecialChar = new Regex("(#base)|({|})");
             regRemark = new Regex("((\\/\\/+).+)|((\\/\\*+)(.|\\n|\\r)*(\\*\\/))"); //주석 제거
             regKv = new Regex("(\\\"([^\\\"]*?)\\\")|(\\'[^\\']*?\\')|[{}]|([^\\s][^\\s]*)"); //KeyValue 형식으로 나눔
             regQuote = new Regex("(^\"+|\"+$)|(^'+|'+$)"); //양끝 따옴표 제거
@@ -30,7 +32,6 @@ namespace Valve.KeyValue
             KVNode current = null;
             for (int i = 0; i < rmvRemark.Count; i++)
             {
-                
                 string str = regQuote.Replace(rmvRemark[i].Value, "");
                 if (str.Equals("}")) //single
                 {

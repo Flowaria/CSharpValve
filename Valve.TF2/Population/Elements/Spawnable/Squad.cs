@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace TF2.Population.Element
 {
-    public class Tank
+    public class Squad : RandomChoice
     {
-        
+        public int FormatationSize { get; set; }
+        public bool PreserveSuqad { get; set; } = false;
     }
 }

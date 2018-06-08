@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Valve.KeyValue;
 
 namespace Valve.Steam
 {
@@ -17,7 +16,7 @@ namespace Valve.Steam
             }
             return null;
         }
-
+        /*
         public static string[] GetSteamLibraryDirectories()
         {
             var dir = GetSteamDirectory();
@@ -43,11 +42,11 @@ namespace Valve.Steam
                 }
             }
             return null;
-        }
+        }*/
 
-        public static string GetSteamStoreHeaderImage(SourceGame sg)
+        public static string GetSteamStoreHeaderImage(int sg)
         {
-            return String.Format("https://steamcdn-a.akamaihd.net/steam/apps/{0}/header.jpg", sg.ClientAppID);
+            return String.Format("https://steamcdn-a.akamaihd.net/steam/apps/{0}/header.jpg", sg);
         }
     }
 }

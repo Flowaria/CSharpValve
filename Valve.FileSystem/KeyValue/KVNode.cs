@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Valve.KeyValue
+namespace Valve.FileSystem.KeyValue
 {
     public class KVNode
     {

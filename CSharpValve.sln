@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SRCDSLauncher", "..\SRCDSLa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEST", "..\SRCDSLauncher\TEST\TEST.csproj", "{CE9EB357-2967-4EDD-ADB9-1274882E60F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Valve.FileSystem", "Valve.FileSystem\Valve.FileSystem.csproj", "{79F896E7-F212-43A7-8529-9AA36AA06723}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{CE9EB357-2967-4EDD-ADB9-1274882E60F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE9EB357-2967-4EDD-ADB9-1274882E60F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE9EB357-2967-4EDD-ADB9-1274882E60F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79F896E7-F212-43A7-8529-9AA36AA06723}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79F896E7-F212-43A7-8529-9AA36AA06723}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79F896E7-F212-43A7-8529-9AA36AA06723}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79F896E7-F212-43A7-8529-9AA36AA06723}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

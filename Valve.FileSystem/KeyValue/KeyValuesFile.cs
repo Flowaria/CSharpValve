@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Valve.KeyValue
+namespace Valve.FileSystem.KeyValue
 {
     public partial class KeyValues
     {

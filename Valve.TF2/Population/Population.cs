@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TF2.Population.Element;
-using Valve.KeyValue;
+﻿using TF2.Population.Element;
 
 namespace TF2.Population
 {

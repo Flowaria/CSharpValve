@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Valve.KeyValue;
+using Valve.FileSystem.KeyValue;
 
-namespace Valve.TextureFormat
+namespace Valve.FileSystem.TextureFormat
 {
     public class VMT
     {
         public VMT()
         {
-            KeyValues kv = KeyValuesFile.ImportKeyValue("filename", false);
+            KeyValues kv = KeyValues.ImportKeyValue("filename", false);
             var basetexture = (string)kv.Root.GetValue("$baseTexture");
         }
     }

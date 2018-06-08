@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Valve.FileSystem.KeyValue;
 
 namespace Valve.Steam
 {
@@ -16,7 +17,7 @@ namespace Valve.Steam
             }
             return null;
         }
-        /*
+        
         public static string[] GetSteamLibraryDirectories()
         {
             var dir = GetSteamDirectory();
@@ -42,7 +43,7 @@ namespace Valve.Steam
                 }
             }
             return null;
-        }*/
+        }
 
         public static string GetSteamStoreHeaderImage(int sg)
         {

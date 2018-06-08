@@ -58,6 +58,10 @@
     <Compile Include="Info\TFEnum.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Valve.FileSystem\Valve.FileSystem.csproj">
+      <Project>{79f896e7-f212-43a7-8529-9aa36aa06723}</Project>
+      <Name>Valve.FileSystem</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Valve\Valve.csproj">
       <Project>{66A8409E-243D-462B-A6D0-DE782B6FABA7}</Project>
       <Name>Valve</Name>

@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,11 +37,11 @@ namespace Valve.Econ
 
         public bool Register(string api_key, string lang = "en")
         {
-            using (var wc = new System.Net.WebClient())
+            using (var wc = new WebClient())
             {
                 try
                 {
-                    wc.Encoding = System.Text.Encoding.UTF8;
+                    wc.Encoding = Encoding.UTF8;
                     string content = wc.DownloadString(GetValidateURL());
                     if (!content.Contains("Forbidden"))
                     {
@@ -56,7 +54,7 @@ namespace Valve.Econ
                         return false;
                     }
                 }
-                catch (System.Net.WebException)
+                catch (WebException)
                 {
                     return false;
                 }
@@ -99,44 +97,43 @@ namespace Valve.Econ
                 try
                 {
                     //Get Current Version
+                    string version = null;
+
                     XmlDocument doc = new XmlDocument();
                     doc.Load(SchemaFile);
                     if (doc.DocumentElement["items_game_url"] != null)
                     {
-                        Version = doc.DocumentElement["items_game_url"].InnerText;
+                        version = doc.DocumentElement["items_game_url"].InnerText;
                     }
 
                     //Check Version
-                    if (Version != null)
+                    if (version != null)
                     {
-                        using (System.Net.WebClient wc = new System.Net.WebClient())
+                        using (var wc = new WebClient())
                         {
-                            wc.Encoding = System.Text.Encoding.UTF8;
+                            wc.Encoding = Encoding.UTF8;
                             string content = wc.DownloadString(String.Format(VERIFY_APIKEY_URL, Key));
-                            if (!content.Contains("Forbidden"))
-                            {
-                                doc.Load(content);
-                                if (doc.DocumentElement["items_game_url"] != null)
-                                {
-                                    string webversion = doc.DocumentElement["items_game_url"].InnerText;
-                                    if (!version.Equals(webversion))
-                                    {
-                                        version = webversion;
-                                        File.Delete(schema_items_dir);
-                                        await wc.DownloadFileTaskAsync(String.Format(SCHEMA_ITEMS_URL, apikey, language), schema_items_dir);
-                                        return FetchSchemaResult.SUCCESS;
-                                    }
-                                    else
-                                    {
-                                        return FetchSchemaResult.FILE_EXIST;
-                                    }
-                                }
-                            }
-                            else
+                            if (content.Contains("Forbidden"))
                             {
                                 return FetchSchemaResult.FAIL_INVALID_APIKEY;
                             }
 
+                            doc.Load(content);
+                            if (doc.DocumentElement["items_game_url"] != null)
+                            {
+                                string webversion = doc.DocumentElement["items_game_url"].InnerText;
+                                if (!version.Equals(webversion))
+                                {
+                                    version = webversion;
+                                    File.Delete(SchemaFile);
+                                    await wc.DownloadFileTaskAsync(SchemaURL, SchemaFile);
+                                    return FetchSchemaResult.SUCCESS;
+                                }
+                                else
+                                {
+                                    return FetchSchemaResult.FILE_EXIST;
+                                }
+                            }
                         }
                     }
                 }
@@ -153,7 +150,7 @@ namespace Valve.Econ
             await Task.Factory.StartNew(delegate
             {
                 XmlDocument schema = new XmlDocument();
-                schema.Load(schema_items_dir);
+                //schema.Load(schema_items_dir);
             });
         }
     }
